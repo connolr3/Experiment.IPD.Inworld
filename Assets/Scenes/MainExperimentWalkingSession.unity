@@ -2968,7 +2968,6 @@ GameObject:
   - component: {fileID: 1124870566}
   - component: {fileID: 1124870565}
   - component: {fileID: 1124870564}
-  - component: {fileID: 1124870563}
   m_Layer: 0
   m_Name: StartMarker
   m_TagString: Untagged
@@ -2976,29 +2975,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1124870563
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124870562}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1124870564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3058,7 +3034,7 @@ Transform:
   m_GameObject: {fileID: 1124870562}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.7587433, y: 0.102, z: 0.3678298}
+  m_LocalPosition: {x: -0.7587433, y: 0, z: 0.3678298}
   m_LocalScale: {x: 0.3900034, y: 0.000822751, z: 0.39000335}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4109,6 +4085,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 198270774157276698, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044006045141325299, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2858055128744304701, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4166,6 +4150,13 @@ PrefabInstance:
     - {fileID: 6489950095696262285, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
     - {fileID: 8840254271034212066, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
     - {fileID: 2524511527586630786, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 4107361256798380626, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 4885735550990672495, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 1565390390188573279, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 8021717172528297503, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 8753147372397292571, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 5783201917919088835, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
+    - {fileID: 2044006045141325299, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb909cd5add75444d854b0d2972a374d, type: 3}
