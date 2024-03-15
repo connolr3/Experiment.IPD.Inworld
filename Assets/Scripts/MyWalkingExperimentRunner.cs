@@ -14,7 +14,7 @@ public class MyWalkingExperimentRunner : MonoBehaviour
     public Transform[] spawnPoints;
 
     public CharacterSet[] FemalecharacterSets;
-  //  public CharacterSet[] MalecharacterSets;
+    //  public CharacterSet[] MalecharacterSets;
     // public GameObject blockStartIndicator;  // GameObject to display at the start of each block
     //  public string[] AIGender = { "Female", "Male" };
     public string[] Locomotion = { "Walking" };
@@ -67,19 +67,20 @@ public class MyWalkingExperimentRunner : MonoBehaviour
         }
     }
 
- public void setUpFirstTrial(){
+    public void setUpFirstTrial()
+    {
 
-    PreTrialPainting.SetActive(true);
-    ExpTrial thisTrial = experimentDesign[0];
-    Texture thisPainting = thisTrial.TrialSet.characterTexture;
-    PaintingImage.texture=thisPainting;
+        PreTrialPainting.SetActive(true);
+        ExpTrial thisTrial = experimentDesign[0];
+        Texture thisPainting = thisTrial.TrialSet.characterTexture;
+        PaintingImage.texture = thisPainting;
 
- }
+    }
 
     void GenerateExpDesign()
     {
         List<CharacterSet> availableFemaleSets = new List<CharacterSet>(FemalecharacterSets);
-    //    List<CharacterSet> availableMaleSets = new List<CharacterSet>(MalecharacterSets);
+        //    List<CharacterSet> availableMaleSets = new List<CharacterSet>(MalecharacterSets);
 
         foreach (string locomotion in Locomotion)
         {
@@ -89,7 +90,7 @@ public class MyWalkingExperimentRunner : MonoBehaviour
             //  genders = genders.SelectMany(g => Enumerable.Repeat(g, TrialRepetitions)).ToList();
 
             // Randomize the order of genders
-             System.Random rng = new System.Random();
+            System.Random rng = new System.Random();
             //  genders = genders.OrderBy(x => rng.Next()).ToList();
             for (int i = 0; i < LastTrial; i++)
             {
@@ -160,18 +161,44 @@ public class MyWalkingExperimentRunner : MonoBehaviour
     public void GetAIReady()
     {
         Debug.Log("getting ai ready");
-        sendPositionScript.BeginRecord();
+        //sendPositionScript.BeginRecord();
         PreTrialPainting.SetActive(false);
         TrialInstructions.SetActive(true);
-   
+
         OptionToStartNextTrial.SetActive(false);
         CharacterSet thisSet = experimentDesign[currentTrial].TrialSet;
         thisAI = thisSet.characterPrefab;
+        GameObject head = thisAI.transform.Find("Armature/Hips/Spine/Spine1/Spine2/Neck/Head").gameObject;
         fact.text = thisSet.fact;
         thisAI.SetActive(true);
         DisableCanvas();
         matchTransform(thisAI, spawnPoints[currentTrial % 2]);
         setCurrentCharacter(thisAI);
+        GameObject hips;
+
+        Transform armatureTransform = thisAI.transform.Find("Armature");
+
+        // Check if armature was found
+        if (armatureTransform != null)
+        {
+            // Find the hips GameObject within armature
+            Transform hipsTransform = armatureTransform.Find("Hips");
+
+            // Check if hips was found
+            if (hipsTransform != null)
+            {
+                // Get the hips GameObject
+                hips = hipsTransform.gameObject;
+            
+                sendPositionScript.setNewAIObjects(hips.transform, head.transform);
+
+            }
+            else
+            {
+                Debug.LogError("Hips not found under armature.");
+            }
+        }
+
     }
 
 
@@ -179,7 +206,7 @@ public class MyWalkingExperimentRunner : MonoBehaviour
     //run when begin speaking to character
     public void EnableNextTrialOption()
     {
-       // PreTrialPainting.SetActive(false);
+        // PreTrialPainting.SetActive(false);
 
         OptionToStartNextTrial.SetActive(true);
     }
@@ -278,7 +305,7 @@ public class MyWalkingExperimentRunner : MonoBehaviour
 
         public ExpTrial(string locomotion, CharacterSet trialSet)
         {
-       
+
             Locomotion = locomotion;
             TrialSet = trialSet;
         }

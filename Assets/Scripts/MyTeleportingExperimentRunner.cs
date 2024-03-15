@@ -152,20 +152,48 @@ PaintingImage.texture=NextPainting;
     //when the player is ready (viewed the painting and about to go speak to AI)
     public void GetAIReady()
     {
-        sendPositionScript.BeginRecord();//starts recording when viewing painting
+     Debug.Log("getting ai ready");
+        //sendPositionScript.BeginRecord();
         PreTrialPainting.SetActive(false);
         TrialInstructions.SetActive(true);
 
         OptionToStartNextTrial.SetActive(false);
         CharacterSet thisSet = experimentDesign[currentTrial].TrialSet;
         thisAI = thisSet.characterPrefab;
+        GameObject head = thisAI.transform.Find("Armature/Hips/Spine/Spine1/Spine2/Neck/Head").gameObject;
         fact.text = thisSet.fact;
         thisAI.SetActive(true);
         DisableCanvas();
         matchTransform(thisAI, spawnPoints[currentTrial % 2]);
         setCurrentCharacter(thisAI);
+        GameObject hips;
+
+        Transform armatureTransform = thisAI.transform.Find("Armature");
+
+        // Check if armature was found
+        if (armatureTransform != null)
+        {
+            // Find the hips GameObject within armature
+            Transform hipsTransform = armatureTransform.Find("Hips");
+
+            // Check if hips was found
+            if (hipsTransform != null)
+            {
+                // Get the hips GameObject
+                hips = hipsTransform.gameObject;
+            
+                sendPositionScript.setNewAIObjects(hips.transform, head.transform);
+
+            }
+            else
+            {
+                Debug.LogError("Hips not found under armature.");
+            }
+        }
     }
 
+    
+ 
 
 
     //run when begin speaking to character
