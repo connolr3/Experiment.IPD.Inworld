@@ -9,6 +9,7 @@ public class OnTeleportEventScript : MonoBehaviour
     public SendPosition sendPositionScript;
     private List<TeleportInteractor> teleportInteractors = new List<TeleportInteractor>();
 
+
     private void Start()
     {
         // Find all TeleportInteractor components in the scene
@@ -32,6 +33,7 @@ public class OnTeleportEventScript : MonoBehaviour
     {
         // Handle locomotion event here
         sendPositionScript.AddTeleportEvent();
+      //  Vector3 teleportPosition = locomotionEvent.Interactor.GetComponent<TeleportInteractor>().ArcEnd.Point;
     }
 
     private void OnDestroy()
