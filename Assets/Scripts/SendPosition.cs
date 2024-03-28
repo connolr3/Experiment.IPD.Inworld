@@ -194,7 +194,7 @@ public class SendPosition : MonoBehaviour
 
             if (webRequest.isNetworkError)
             {
-                Debug.Log("Error: " + webRequest.error);
+             //   Debug.Log("Error: " + webRequest.error);
             }
             else
             {

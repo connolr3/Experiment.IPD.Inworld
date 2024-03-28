@@ -32,27 +32,44 @@ public class SnapTeleport : MonoBehaviour
         }
     }
 
+    private bool IsPlayerNearZone(GameObject zone)
+    {
+        // Check if the player is near the zone based on the hit point provided by TeleportInteractable.
+        TeleportInteractable teleportInteractable = zone.GetComponent<TeleportInteractable>();
+        if (teleportInteractable != null)
+        {
+            TeleportHit hit;
+            if (teleportInteractable.DetectHit(PlayerController.transform.position, PlayerController.transform.position, out hit))
+            {
+                // Check proximity based on hit point
+                Debug.Log(hit.Point);
+                float distanceToZone = Vector3.Distance(hit.Point, PlayerController.transform.position);
+                 Debug.Log(distanceToZone);
+                return distanceToZone < proximity;
+            }
+        }
+        return false;
+    }
+
+
     public RemindPlayerAudio audio;
 public Transform player;
 public GameObject PlayerController;
-    private void OnLocomotionPerformed(LocomotionEvent locomotionEvent)
+  
+      private void OnLocomotionPerformed(LocomotionEvent locomotionEvent)
     {
-        Vector3  playerFeet = new Vector3(player.position.x,0,player.position.z);
         foreach (GameObject zone in ProximityZones)
+        {
+            if (zone.activeSelf && IsPlayerNearZone(zone) && !hasTeleportedIntoZone)
             {
-                if (zone.activeSelf&&Vector3.Distance(playerFeet, zone.transform.position) < 1.0f)
-                {
-                    // Teleport the player to a certain position
-                   // sendPositionScript.TeleportToCertainPosition();
-
-                    // Set the flag to true indicating that the player has teleported into a zone
-                    audio.Play();
-                    snapDistance(zone);
-                    zone.SetActive(false);
-                    hasTeleportedIntoZone = true;
-                    break;
-                }
+                // Teleport the player to a certain position
+                audio.Play();
+                snapDistance(zone);
+                zone.SetActive(false);
+                hasTeleportedIntoZone = true;
+                break;
             }
+        }
     }
 public float proximity = 0.7f;
 public void snapDistance(GameObject zone){
