@@ -1280,10 +1280,11 @@ MonoBehaviour:
   sendPositionScript: {fileID: 491061518}
   toMatch: {fileID: 4294135514145998410}
   rig: {fileID: 4294135514145998410}
-  playSnapAudio: 0
+  playSnapAudio: 1
   playMe: {fileID: 491061525}
   cameraOffset: {fileID: 1759939149}
   MainCamera: {fileID: 4294135514145998408}
+  snapRotate: 0
   player: {fileID: 2483171110767682709}
   snapRadius: 2
 --- !u!82 &491061525
