@@ -876,7 +876,7 @@ PrefabInstance:
     - target: {fileID: 3318840741852656786, guid: 82fbeac7e402035439f0cfc01835c77e, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 491061519}
+      objectReference: {fileID: 491061526}
     - target: {fileID: 3318840741852656786, guid: 82fbeac7e402035439f0cfc01835c77e, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -923,7 +923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318840741852656786, guid: 82fbeac7e402035439f0cfc01835c77e, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyTeleportingExperimentRunner, Assembly-CSharp
+      value: MySnapExperimentRunner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3318840741852656786, guid: 82fbeac7e402035439f0cfc01835c77e, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1046,56 +1046,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384390389}
   m_CullTransparentMesh: 1
---- !u!1 &396516586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 396516588}
-  - component: {fileID: 396516587}
-  m_Layer: 0
-  m_Name: hEAD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &396516587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396516586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Device: 0
-  m_PoseSource: 2
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_UseRelativeTransform: 0
---- !u!4 &396516588
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396516586}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49453294, y: 1.5058703, z: -0.9751864}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491061514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,12 +1057,13 @@ GameObject:
   - component: {fileID: 491061516}
   - component: {fileID: 491061515}
   - component: {fileID: 491061518}
-  - component: {fileID: 491061519}
+  - component: {fileID: 491061526}
   - component: {fileID: 491061521}
   - component: {fileID: 491061520}
   - component: {fileID: 491061522}
   - component: {fileID: 491061523}
   - component: {fileID: 491061524}
+  - component: {fileID: 491061525}
   m_Layer: 0
   m_Name: GameManagaer
   m_TagString: Untagged
@@ -1175,47 +1126,6 @@ MonoBehaviour:
   - {fileID: 2118215472}
   UserCam: {fileID: 1991949156}
   UserHips: {fileID: 2671500472800804354}
---- !u!114 &491061519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491061514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0baeff6198b801a4e8a31d4706852f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 801475641}
-  - {fileID: 2118215472}
-  FemalecharacterSets:
-  - characterPrefab: {fileID: 371065659}
-    characterTexture: {fileID: 2800000, guid: 9eaa61f4db648cb40a182bbb6b676f37, type: 3}
-    fact: What does the painting represent?
-  - characterPrefab: {fileID: 860113568}
-    characterTexture: {fileID: 2800000, guid: 30f846883fc9e9d46a6da616ca9505e0, type: 3}
-    fact: where are the mountains in the painting?
-  - characterPrefab: {fileID: 555615732}
-    characterTexture: {fileID: 2800000, guid: 96457a6f5ac2899408923d04304d2af6, type: 3}
-    fact: Where is the diner in this painting?
-  - characterPrefab: {fileID: 1139455456}
-    characterTexture: {fileID: 2800000, guid: 3257c73c340401843a6c344311586291, type: 3}
-    fact: What period of time is the painting from?
-  Locomotion:
-  - Teleportation
-  TrialRepetitions: 3
-  PaintingImage: {fileID: 1111154359}
-  PreTrialPainting: {fileID: 873563214}
-  TrialInstructions: {fileID: 1405825797}
-  OptionToStartNextTrial: {fileID: 903235864}
-  EntireTrialCanvas: {fileID: 149439040}
-  Finished: {fileID: 1323407041}
-  fact: {fileID: 3743689213264670099}
-  sendPositionScript: {fileID: 491061518}
-  floor: {fileID: 1493727622}
-  components: []
 --- !u!82 &491061520
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1367,15 +1277,153 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784c65d5858eca841b1bdcb8a9b788a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendPositionScript: {fileID: 0}
-  toMatch: {fileID: 0}
-  rig: {fileID: 0}
-  targetMatch: {fileID: 0}
-  cameraOffset: {fileID: 0}
-  MainCamera: {fileID: 0}
+  sendPositionScript: {fileID: 491061518}
+  toMatch: {fileID: 4294135514145998410}
+  rig: {fileID: 4294135514145998410}
+  playSnapAudio: 0
+  playMe: {fileID: 491061525}
+  cameraOffset: {fileID: 1759939149}
+  MainCamera: {fileID: 4294135514145998408}
   player: {fileID: 2483171110767682709}
-  SpawnA: {fileID: 1232931483}
-  target: {fileID: 0}
+  snapRadius: 2
+--- !u!82 &491061525
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491061514}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 12c6baf9d183ed04db3ab731c5e1e9c4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &491061526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491061514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1211176744526346b236be90263db79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 801475641}
+  - {fileID: 2118215472}
+  FemalecharacterSets:
+  - characterPrefab: {fileID: 371065659}
+    characterTexture: {fileID: 2800000, guid: 9eaa61f4db648cb40a182bbb6b676f37, type: 3}
+    fact: What does the painting represent?
+  - characterPrefab: {fileID: 860113568}
+    characterTexture: {fileID: 2800000, guid: 30f846883fc9e9d46a6da616ca9505e0, type: 3}
+    fact: where are the mountains in the painting?
+  - characterPrefab: {fileID: 555615732}
+    characterTexture: {fileID: 2800000, guid: 96457a6f5ac2899408923d04304d2af6, type: 3}
+    fact: Where is the diner in this painting?
+  - characterPrefab: {fileID: 1139455456}
+    characterTexture: {fileID: 2800000, guid: 3257c73c340401843a6c344311586291, type: 3}
+    fact: What period of time is the painting from?
+  Locomotion:
+  - Teleportation
+  TrialRepetitions: 3
+  PaintingImage: {fileID: 1111154359}
+  PreTrialPainting: {fileID: 873563214}
+  TrialInstructions: {fileID: 1405825797}
+  OptionToStartNextTrial: {fileID: 903235864}
+  EntireTrialCanvas: {fileID: 149439040}
+  Finished: {fileID: 1323407041}
+  fact: {fileID: 3743689213264670099}
+  snap: {fileID: 491061524}
+  sendPositionScript: {fileID: 491061518}
+  floor: {fileID: 1493727622}
+  components: []
 --- !u!1001 &555615731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1459,7 +1507,7 @@ PrefabInstance:
     - target: {fileID: 4783130847894698610, guid: 2caaf4b5bc3b1b44f8e6e58f7714d6fa, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 491061519}
+      objectReference: {fileID: 491061526}
     - target: {fileID: 4783130847894698610, guid: 2caaf4b5bc3b1b44f8e6e58f7714d6fa, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1506,7 +1554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783130847894698610, guid: 2caaf4b5bc3b1b44f8e6e58f7714d6fa, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyTeleportingExperimentRunner, Assembly-CSharp
+      value: MySnapExperimentRunner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4783130847894698610, guid: 2caaf4b5bc3b1b44f8e6e58f7714d6fa, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2552,7 +2600,7 @@ PrefabInstance:
     - target: {fileID: 8915221937972055577, guid: 48549db685bc97f478eff8ecdd1bd6a9, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 491061519}
+      objectReference: {fileID: 491061526}
     - target: {fileID: 8915221937972055577, guid: 48549db685bc97f478eff8ecdd1bd6a9, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2599,7 +2647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915221937972055577, guid: 48549db685bc97f478eff8ecdd1bd6a9, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyTeleportingExperimentRunner, Assembly-CSharp
+      value: MySnapExperimentRunner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8915221937972055577, guid: 48549db685bc97f478eff8ecdd1bd6a9, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -3114,7 +3162,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2691687072563518387, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
   m_PrefabInstance: {fileID: 6521967166734318610}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1036818186
+--- !u!114 &1036818192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3123,10 +3171,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036818180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041a678e0900c1c4f9d582ce5283633e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7191dd6eb723a94478412dc73c29089d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myrunner: {fileID: 491061519}
+  myrunner: {fileID: 491061526}
   TrialInstructions: {fileID: 1405825797}
   toDisable: {fileID: 806462170682194314}
 --- !u!1 &1081610364
@@ -3269,7 +3317,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111154358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3463,7 +3511,7 @@ PrefabInstance:
     - target: {fileID: 3634606346994450072, guid: c4a27b92046b82140abf51fbb88e9900, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 491061519}
+      objectReference: {fileID: 491061526}
     - target: {fileID: 3634606346994450072, guid: c4a27b92046b82140abf51fbb88e9900, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3510,7 +3558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634606346994450072, guid: c4a27b92046b82140abf51fbb88e9900, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyTeleportingExperimentRunner, Assembly-CSharp
+      value: MySnapExperimentRunner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3634606346994450072, guid: c4a27b92046b82140abf51fbb88e9900, type: 3}
       propertyPath: onBeginSpeaking.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -12092,14 +12140,14 @@ PrefabInstance:
     - target: {fileID: 78161190258941515, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1036818186}
+      objectReference: {fileID: 1036818192}
     - target: {fileID: 78161190258941515, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonPress
       objectReference: {fileID: 0}
     - target: {fileID: 78161190258941515, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TeleportGameManager, Assembly-CSharp
+      value: SnapGameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2691687072563518387, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
       propertyPath: m_Name
@@ -12155,7 +12203,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2691687072563518387, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1036818186}
+      addedObject: {fileID: 1036818192}
   m_SourcePrefab: {fileID: 100100000, guid: f62762d61a57852419ae19b516b9d3be, type: 3}
 --- !u!1 &6537696970208021412
 GameObject:
@@ -14315,4 +14363,3 @@ SceneRoots:
   - {fileID: 860113567}
   - {fileID: 555615731}
   - {fileID: 1139455455}
-  - {fileID: 396516588}

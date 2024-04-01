@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using Inworld;
 
 using System;
+using UnityEngine.UIElements;
 public class SendPosition : MonoBehaviour
 {
     public GameObject[] gameObjects;
@@ -156,6 +157,22 @@ public class SendPosition : MonoBehaviour
         number_Teleports++;
         string timestamp = GetTimestamp();
         string teleportData = $"{{\"name\":\"Teleported\", \"position\":\"{-1},{-1},{-1},{-1},{-1},{-1},{-1},{-1},{-1},{-1},{-1},{-1}\", \"timestamp\":\"{timestamp}\"}}";
+        teleportEvents.Add(teleportData);
+    }
+    public void AddTeleportEvent(Vector3 posiiton)
+    {
+        number_Teleports++;
+        string timestamp = GetTimestamp();
+        string teleportData = $"{{\"name\":\"Teleported to\", \"position\":\"{UserCam.position.x},{UserCam.position.y},{UserCam.position.z},{UserHips.position.x},{UserHips.position.y},{UserHips.position.z},{-1},{-1}\", \"timestamp\":\"{timestamp}\"}}";
+      //  string teleportData = $"{{\"name\":\"Teleported to: \", \"position\":\"{'x'},{posiiton.x},{'z'},{posiiton.z},{-1},{-1},{-1},{-1},{-1},{-1},{-1},{-1}\", \"timestamp\":\"{timestamp}\"}}";
+        teleportEvents.Add(teleportData);
+    }
+    public void AddSnapTeleportEvent(Vector3 posiiton)
+    {
+        number_Teleports++;
+        string timestamp = GetTimestamp();
+
+        string teleportData = $"{{\"name\":\"snapped to\", \"position\":\"{UserCam.position.x},{UserCam.position.y},{UserCam.position.z},{UserHips.position.x},{UserHips.position.y},{UserHips.position.z},{-1},{-1}\", \"timestamp\":\"{timestamp}\"}}";
         teleportEvents.Add(teleportData);
     }
 
