@@ -94,45 +94,58 @@ public class snapPlayer : MonoBehaviour
         return new Vector3(-1,-1,-1);
        
     }
-    private void Update()
-    {
-        Debug.Log(index);
-    }
+   // private void Update()
+   // {
+      //  Debug.Log(index);
+   // }
     public void updateIndex(int newindex) {
         index = newindex;
 
     }
     private Vector3 targetPoint;
     public float snapRadius = 2f;
-    private void MoveXROriginToFinalPosXY(Vector3 finalPosition)
+   private void MoveXROriginToFinalPosXY(Vector3 finalPosition)
+{
+    if (rig != null && MainCamera != null && !alreadySnapped[index])
     {
-        if (rig != null && MainCamera != null && !alreadySnapped[index])
+        // Calculate the offset needed to move MainCamera to the final position (only affecting X and Z)
+        Vector3 offset = new Vector3(finalPosition.x - MainCamera.transform.position.x, 0f, finalPosition.z - MainCamera.transform.position.z);
+        // Calculate the rotation needed to go from the current Y rotation to the target Y rotation
+        float targetYRotation = finalPosition.y; // Assuming finalPosition.y represents the Y rotation
+        float currentYRotation = MainCamera.transform.eulerAngles.y;
+        float deltaRotation = targetYRotation - currentYRotation;
+        Quaternion rotationNeeded = Quaternion.Euler(0f, deltaRotation, 0f);
+
+       
+
+        // Calculate the vector from player to target
+        Vector3 playerToTarget = target.position - MainCamera.transform.position;
+
+        // Check if the player is in front of the target (dot product should be positive)
+        if (Vector3.Dot(playerToTarget.normalized, MainCamera.transform.forward) > 0)
         {
-            // Calculate the offset needed to move MainCamera to the final position (only affecting X and Z)
-            Vector3 offset = new Vector3(finalPosition.x - MainCamera.transform.position.x, 0f, finalPosition.z - MainCamera.transform.position.z);
-
-            // Move XROrigin with the calculated offset
-            rig.transform.position += offset;
-
-            // Calculate the rotation needed to go from the current Y rotation to the target Y rotation
-            float targetYRotation = finalPosition.y; // Assuming finalPosition.y represents the Y rotation
-            float currentYRotation = MainCamera.transform.eulerAngles.y;
-            float deltaRotation = targetYRotation - currentYRotation;
-            Quaternion rotationNeeded = Quaternion.Euler(0f, deltaRotation, 0f);
-        if(playSnapAudio)
-            playMe.Play();
+               // Move XROrigin with the calculated offset
+        rig.transform.position += offset;
             // Apply the calculated rotation to toMatch
-            if (snapRotate){
-                 toMatch.transform.rotation *= rotationNeeded;
+            if (snapRotate)
+            {
+                toMatch.transform.rotation *= rotationNeeded;
             }
+             if (playSnapAudio)
+            playMe.Play();
             alreadySnapped[index] = true;
-
         }
         else
         {
-            Debug.LogWarning("Set 'XROrigin' and 'MainCamera' references in the inspector.");
+            Debug.LogWarning("Player is not in front of the target.");
         }
     }
+    else
+    {
+        Debug.LogWarning("Set 'XROrigin' and 'MainCamera' references in the inspector.");
+    }
+}
+
 
 
 

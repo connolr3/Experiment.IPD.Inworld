@@ -1064,6 +1064,7 @@ GameObject:
   - component: {fileID: 491061523}
   - component: {fileID: 491061524}
   - component: {fileID: 491061525}
+  - component: {fileID: 491061527}
   m_Layer: 0
   m_Name: GameManagaer
   m_TagString: Untagged
@@ -1425,6 +1426,18 @@ MonoBehaviour:
   sendPositionScript: {fileID: 491061518}
   floor: {fileID: 1493727622}
   components: []
+--- !u!114 &491061527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491061514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdae83ca26f1f7348ad3a39e5e094cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &555615731
 PrefabInstance:
   m_ObjectHideFlags: 0
