@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainExperiment 1.unity
     guid: c54cc32eaa1e6ed409dee833f7edc9cd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainExperimentWalkingSession.unity
     guid: 31ffe92342d7a344db327fbb80f3e67d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainExperimentTeleportingSession.unity
     guid: 61d12c6687c812a40a7dd1c5757940e2
   m_configObjects:
